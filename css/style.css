@@ -1209,6 +1209,21 @@ ul.portfolio-image li .desc{
   color: #636363;
 }
 
+/*----------------------------------------- 8) Component --------------------------------------------------*/
+/*---------------- a. Resume ----------------*/
+
+.resume {
+  width: auto;
+  height: 400px;
+  position:relative;
+  padding-right:0px;
+  padding-left:0px;
+  margin-right: 0px !important;
+  width:75%;
+  float:right;
+  border: 2px solid #000000;
+  background-color: #555555;
+}
 
 /*----------------------------------------- 8) Component --------------------------------------------------*/
 /*---------------- a. Skills ----------------*/
