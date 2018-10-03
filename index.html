@@ -178,14 +178,14 @@
                   <span>My Work</span>
                 </h3>
                 <p class="content-detail">
-                  My portfolio is in progress and will be uploaded as soon as possible.
+                  My portfolio is in progress and will be updated as soon as possible.
                 </p>
               </div>
               <div class="col-md-9 content-right">
                 <!--PORTFOLIO IMAGE-->
                 <ul class="portfolio-image">
                   <li class="col-md-6">
-                    <button class="portfolioButton" id="1"><img alt="image" src="images/Covers/programming.jpg">
+                    <button class="portfolioButton" id="1" onclick="showModal('Programming')"><img alt="image" src="images/Covers/programming.jpg">
                       <div class="decription-wrap">
                         <div class="image-bg">
                            <p class="desc">Programming</p>
@@ -194,7 +194,7 @@
                     </button>
                   </li>
                   <li class="col-md-6">
-                    <button class="portfolioButton" id="2"><img alt="image" src="images/Covers/drawing.jpg">
+                    <button class="portfolioButton" id="2" onclick="showModal('Drawing')"><img alt="image" src="images/Covers/drawing.jpg">
                       <div class="decription-wrap">
                         <div class="image-bg">
                           <p class="desc">
@@ -205,7 +205,7 @@
                     </button>
                   </li>
                   <li class="col-md-6">
-                    <button class="portfolioButton" id="3"><img alt="image" src="images/Covers/3D.jpg">
+                    <button class="portfolioButton" id="3" onclick="showModal('3DWork')"><img alt="image" src="images/Covers/3D.jpg">
                       <div class="decription-wrap">
                         <div class="image-bg">
                           <p class="desc">
@@ -216,7 +216,7 @@
                     </button>
                   </li>
                   <li class="col-md-6">
-                    <button class="portfolioButton" id="4"><img alt="image" src="images/Covers/paint.jpg">
+                    <button class="portfolioButton" id="4" onclick="showModal('Painting')"><img alt="image" src="images/Covers/paint.jpg">
                       <div class="decription-wrap">
                         <div class="image-bg">
                           <p class="desc">
@@ -227,18 +227,18 @@
                     </button>
                   </li>
                   <li class="col-md-6">
-                    <button class="portfolioButton" id="5"><img alt="image" src="images/Covers/design.jpg">
+                    <button class="portfolioButton" id="5" onclick="showModal('DigitalArt')"><img alt="image" src="images/Covers/design.jpg">
                       <div class="decription-wrap">
                         <div class="image-bg">
                           <p class="desc">
-                            Designs/ Other
+                            Digital Art
                           </p>
                         </div>
                       </div>
                     </button>
                   </li>
                   <li class="col-md-6">
-                    <button class="portfolioButton" id="6"><img alt="image" src="images/Covers/photo.jpg">
+                    <button class="portfolioButton" id="6" onclick="showModal('Photography')"><img alt="image" src="images/Covers/photo.jpg">
                       <div class="decription-wrap">
                         <div class="image-bg">
                           <p class="desc">
@@ -255,12 +255,107 @@
           </div>
         </section>
 
+        <!--Drawings !!! -->
+
         <div id="myModal" class="modal">
           <div class = "modal-content">
-            <span class="close">&times;</span>
-            <p>Content coming soon</p>
+            <span class = "close">&times;</span>
+            <h3 id="modalTitle"> default </h3>
+            <div class="slideshow-container" id="slideShow">
+              <div class="Drawing slide">
+                <img src="images/Drawings/1.jpg" style="width:100%;">
+              </div>
+
+              <div class="Drawing slide">
+                <img src="images/Drawings/2.PNG" style="width:100%;">
+              </div>
+
+              <div class="Drawing slide">
+                <img src="images/Drawings/3.PNG" style="width:100%;">
+              </div>
+
+              <div class="Drawing slide">
+                <img src="images/Drawings/4.jpg" style="width:100%;">
+              </div>
+
+              <div class="Drawing slide">
+                <img src="images/Drawings/5.PNG" style="width:100%;">
+              </div>
+
+              <div class="Drawing slide">
+                <img src="images/Drawings/6.PNG" style="width:100%;">
+              </div>
+
+              <div class="Painting slide">
+                <img src="images/Paintings/1.jpg" style="width:100%;">
+              </div>
+
+              <div class="DigitalArt slide">
+                <img src="images/Design/1.PNG" style="width:100%;">
+              </div>
+
+              <div class="DigitalArt slide">
+                <img src="images/Design/2.jpg" style="width:100%;">
+              </div>
+
+              <div class="DigitalArt slide">
+                <img src="images/Design/3.PNG" style="width:100%;">
+              </div>
+
+              <div class="DigitalArt slide">
+                <img src="images/Design/4.PNG" style="width:100%;">
+              </div>
+
+              <div class="DigitalArt slide">
+                <img src="images/Design/5.PNG" style="width:100%;">
+              </div>
+
+              <div class="DigitalArt slide">
+                <img src="images/Design/6.PNG" style="width:100%;">
+              </div>
+
+              <div class="DigitalArt slide">
+                <img src="images/Design/7.png" style="width:100%;">
+              </div>
+
+              <div class="DigitalArt slide">
+                <img src="images/Design/8.PNG" style="width:100%;">
+              </div>
+
+              <div class="Photography slide">
+                <img src="images/Photography/1.JPG" style="width:100%;">
+              </div>
+
+              <div class="Photography slide">
+                <img src="images/Photography/2.JPG" style="width:100%;">
+              </div>
+
+              <div class="Photography slide">
+                <img src="images/Photography/3.JPG" style="width:100%;">
+              </div>
+
+              <div class="Photography slide">
+                <img src="images/Photography/4.JPG" style="width:100%;">
+              </div>
+
+              <div class="Photography slide">
+                <img src="images/Photography/5.JPG" style="width:100%;">
+              </div>
+
+              <div class="Photography slide">
+                <img src="images/Photography/6.JPG" style="width:100%;">
+              </div>
+
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div style="text-align:center" id="dotDiv">
+
+            </div>
+            <button id="processButton">Details</button>
           </div>
         </div>
+
         <!--/.WORK END-->
 
         <!--SERVICES-->
