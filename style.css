@@ -28,7 +28,7 @@ body,html{
 .title {
 	color: #0F173B;
 	text-align: center;
-	font-family: maven-pro;
+	font-family: maven-pro, sans-serif;
 	font-style: normal;
 	font-weight: 400;
 }
