@@ -1,0 +1,174 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>Ethan Hardacre</title>
+<link href="portfolioStyle.css" rel="stylesheet" type="text/css">
+<link href="HomeStyle.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400|Alegreya:400&display=swap" rel="stylesheet">
+</head>
+<body onload="startTime()">
+<div class="desktop" id="canvas">
+<button class="iconframes" style="left: 80%; top: 62%">
+  <img src="images/recyclebin.png" class="icons"/>
+  <p class="iconText">Recycle Bin</p>
+</button>
+</div>
+<div class="bar">
+<p id="clock">11:00</p>
+<button class="startButton" onclick="showStartMenu()"/>
+</div>
+<div id="startMenu">
+
+</div>
+<div style="position: absolute; left: 50%; top: 10%;">
+    <div id="windowFrame">
+      <h4 id="windowTitle">Title</h4>
+      <button id="xbutton" onclick="closeFolder()"></button>
+      <div id="windowContents">
+      </div>
+    </div>
+</div>
+
+<div class="frame"></div>
+</body>
+
+<script src="specs.js"></script>
+
+<script>
+
+var desktop = document.getElementById('canvas');
+for(i in folders){
+    var name = folders[i];
+    var btn = document.createElement("BUTTON");
+    btn.classList.add("iconFrames");
+    var coords = folderLocations[i];
+    btn.style.left = coords[0] + "%";
+    btn.style.top = coords[1] + "%";
+    btn.onclick = (function(folder) {
+      return function() {
+        openFolder(folder);
+      };
+    })(folders[i]);
+
+    var img = document.createElement("IMG");
+    img.src = "images/folder.png";
+    img.classList.add("icons");
+    btn.appendChild(img);
+
+    var par = document.createElement("P");
+    par.classList.add("iconText");
+    par.innerHTML = folders[i];
+    btn.appendChild(par);
+
+    desktop.appendChild(btn);
+}
+
+var canvas = document.getElementById('canvas');
+var mouse = {
+  x:0,
+  y:0,
+  sx:0,
+  sy:0,
+  dragging: false
+}
+var selBox = null;
+
+openFolder("Home");
+
+function setMousePosition(e) {
+        var ev = e || window.event; //Moz || IE
+        if (ev.pageX) { //Moz
+            mouse.x = ev.pageX + window.pageXOffset;
+            mouse.y = ev.pageY + window.pageYOffset;
+        } else if (ev.clientX) { //IE
+            mouse.x = ev.clientX + document.body.scrollLeft;
+            mouse.y = ev.clientY + document.body.scrollTop;
+        }
+    }
+canvas.onmousedown = function(e) {
+  if(selBox !== null){
+    canvas.removeChild(selBox);
+    selBox = null;
+  }
+  mouse.dragging = true;
+  mouse.startX = mouse.x;
+  mouse.startY = mouse.y;
+  selBox = document.createElement('div');
+  selBox.id = 'rectangle'
+  selBox.style.left = mouse.x + 'px';
+  selBox.style.top = mouse.y + 'px';
+  canvas.appendChild(selBox)
+}
+
+canvas.onmousemove = function(e) {
+  setMousePosition(e);
+  if(mouse.dragging && selBox !== null){
+      selBox.style.width = Math.abs(mouse.x - mouse.startX) + 'px';
+      selBox.style.height = Math.abs(mouse.y - mouse.startY) + 'px';
+      selBox.style.left = (mouse.x - mouse.startX < 0) ? mouse.x + 'px' : mouse.startX + 'px';
+      selBox.style.top = (mouse.y - mouse.startY < 0) ? mouse.y + 'px' : mouse.startY + 'px';
+  }
+}
+
+canvas.onmouseup = function(e) {
+    mouse.dragging = false;
+    canvas.removeChild(selBox);
+    selBox = null;
+}
+
+function openFolder(folder){
+  console.log(folder);
+    var window = document.getElementById('windowFrame');
+    document.getElementById('windowTitle').innerHTML = folder;
+    window.style.display = "block";
+    $(function(){
+      $("#windowContents").load("portfolio/"+folder+"/"+folder+".html");
+    });
+}
+
+function closeFolder(){
+  var window = document.getElementById('windowFrame');
+  window.style.display = "none";
+}
+
+function showStartMenu(){
+  var menu = document.getElementById('startMenu');
+  menu.style.display = "block";
+}
+
+$(document).mouseup(function(e)
+{
+    var container = $("#startMenu");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0)
+    {
+        container.css("display","none");
+    }
+});
+
+
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  m = checkTime(m);
+  document.getElementById('clock').innerHTML =
+  adjHour(h) + ":" + m + " " + ampm(h);
+  var t = setTimeout(startTime, 500);
+}
+function adjHour(h){
+  return (h > 12) ? h - 12 : h;
+}
+function ampm(h){
+  return (h > 12) ? "PM" : "AM";
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};
+  return i;
+}
+
+</script>
+
+</html>

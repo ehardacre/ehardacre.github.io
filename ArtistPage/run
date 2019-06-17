@@ -1,0 +1,4 @@
+#!/bin/bash
+python getspecs.py
+/usr/bin/open -a "/Applications/Google Chrome.app" 'http://localhost:8080'
+python -m SimpleHTTPServer 8080

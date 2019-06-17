@@ -1,0 +1,10 @@
+#artworkBG {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-image: linear-gradient(185deg,rgb(53, 126, 246), rgb(53, 126, 246),rgb(192,225,254),rgb(129, 160, 54),rgb(129, 160, 54));
+}
+
+#awContent {
+
+}

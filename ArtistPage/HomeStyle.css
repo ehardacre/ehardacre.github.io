@@ -1,0 +1,19 @@
+.hdr{
+  width:100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("images/headerphoto.png");
+  z-index: 200px;
+}
+
+.h1Home{
+  font-family: 'Alegreya', serif;
+  margin-left: 20px;
+}
+
+.pHome{
+  font-family: 'Alegreya Sans',sans-serif;
+  margin-left: 20px;
+}

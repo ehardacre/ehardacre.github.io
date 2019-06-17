@@ -1,0 +1,151 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+::selection {
+  background: rgb(89, 159, 246);
+}
+::-moz-selection {
+  background: rgb(89, 159, 246);
+}
+
+.frame { /*final formatting*/
+  background-image: url("images/frame2.png"); /*monitor frame */
+  height: 100%; width: 100%; /* set the dimensions (necessary) */
+  position: fixed; /*So that the position of the bg and monitor are in the same place*/
+  background-size: 100% 100%; /*fix image to border */
+  pointer-events: none; /*click through */
+  z-index: 30;
+}
+
+.desktop { /*final formatting*/
+  background-image: url("images/bliss.jpg"); /*bliss microsoft xp image */
+  height: 100%; width: 100%; /* set the dimensions (necessary) */
+  position: fixed; /*So that the position of the bg and monitor are in the same place*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 98% 98%;
+}
+
+.iconframes{
+  height: 100px; width: 100px; /* set the dimensions (necessary) */
+  position: relative;
+  z-index: 10;
+  background: none;
+  border: none;
+  outline: none;
+  margin: 10px;
+  user-select: none;
+}
+
+.icons{
+  max-width: 50%;
+  max-height: 50%;
+  user-select: none;
+}
+
+.iconText{
+  color: white;
+  font-size: 11pt;
+  font-family: "Tahoma";
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 8px;
+  user-select: none;
+}
+
+.bar {
+  background-image: url("images/start.png");
+  height: 3.8%; width: 100%; /* set the dimensions (necessary) */
+  position: absolute; /*So that the position of the bg and monitor are in the same place*/
+  top:92.1%;
+  left:1%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 95% 95%;
+  z-index: 29;
+}
+
+#startMenu {
+  display: none;
+  background-image: url("images/menu.png");
+  position:absolute;
+  height: 524px;
+  width: 396px;
+  left: 3.7%;
+  bottom:2%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 28;
+}
+
+.startButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100%;
+  z-index: 30;
+  background-color: rgba(255, 0, 0, 0.0);
+  border: none;
+  outline: none;
+}
+
+#windowContents{
+    width: 98%;
+    height: 87%;
+    margin-top: 5%;
+    margin-left:1%;
+    z-index: 100;
+    overflow: scroll;
+  
+}
+
+#windowTitle {
+  padding-top: 10px;
+  padding-left: 20px;
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: "Tahoma";
+}
+
+#windowFrame{
+  background-image: url("images/windowFrame1.png");
+  height: 582px; width: 773px; /* set the dimensions (necessary) */
+  z-index: 20;
+  position: relative;
+  left: -50%;
+  background-size: 100% 100%;
+  display:none;
+}
+
+#xbutton{
+  width: 30px; height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+#clock{
+  width: auto; height: auto;
+  margin-top: 7.5;
+  color: white;
+  text-align: right;
+  padding-right: 6%;
+  font-family: "Tahoma";
+  font-size: 10pt;
+}
+
+#rectangle {
+    border: 2px solid #599ff6;
+    background-color: rgba(89, 159, 246, 0.4);
+    position: absolute;
+}
