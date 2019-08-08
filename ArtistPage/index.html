@@ -5,6 +5,7 @@
 <title>Ethan Hardacre</title>
 <link href="portfolioStyle.css" rel="stylesheet" type="text/css">
 <link href="HomeStyle.css" rel="stylesheet" type="text/css">
+<link href="ProjectStyle.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400|Alegreya:400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
@@ -37,6 +38,14 @@
 <script src="specs.js"></script>
 
 <script>
+	
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
+//TODO: add check for mobile devices 
+if (isMobileDevice()){
+	
+}
 
 var desktop = document.getElementById('canvas');
 for(i in folders){

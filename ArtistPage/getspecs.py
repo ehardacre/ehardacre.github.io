@@ -26,8 +26,8 @@ def formFileTree(folder,path): #add quotes to values
     return str + "}\n"
 
 tree = "var fileTree = {" + formFileTree("portfolio","./") + "};"
-folders = "var folders = [\"Home\", \"Creators\", \"Store\", \"Projects\"];"
-folderLocations = "var folderLocations = [[0,15],[-10,35],[-15,55],[20,30]];"
+folders = "var folders = [\"Home\", \"Projects\", \"Store\"];"
+folderLocations = "var folderLocations = [[0,15],[-10,35],[-15,55]];"
 
 f = open('specs.js', 'w')
 f.write(folders + "\n")
