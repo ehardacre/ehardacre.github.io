@@ -102,3 +102,27 @@ body,html{
 .fa:hover {
     opacity: 0.7;
 }
+
+.fa .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+	
+  font-family: maven-pro, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 105%;
+}
+
+.fa:hover .tooltiptext {
+  visibility: visible;
+}
