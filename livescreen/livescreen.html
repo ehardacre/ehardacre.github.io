@@ -1,0 +1,147 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Living Screen</title>
+  <meta name="description" content="The Living Screen">
+  <meta name="author" content="Ethan Hardacre">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="glitch.css">
+  <script src="sunset.js"></script>
+
+  <style>
+    body{
+      background-color: black;
+      overflow: hidden;
+    }
+    #continue{
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      top: 90%;
+      left: 0;
+      margin-top: -25px;
+      text-align: center;
+      color: white;
+      outline: none;
+      font-family: 'Special Elite', cursive;
+      z-index: 1;
+    }
+    #sun {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      left: 50%;
+      margin-left: -50px;
+      top: -100px;
+    }
+    #scrollingText{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 10;
+      color: white;
+      outline: none;
+      font-family: 'Special Elite', cursive;
+      z-index: 1;
+    }
+    .center {
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      top: 50%;
+      left: 0;
+      margin-top: -25px;
+      text-align: center;
+      color: white;
+      outline: none;
+      font-family: 'Special Elite', cursive;
+      z-index: 1;
+      font-size: 2vw;
+      display: block;
+    } ​
+
+  </style>
+
+</head>
+
+<body>
+  <div class="center glitch" data-text="This video can only be viewed after the sun has set." id="text">This video can only be viewed after the sun has set.</div>
+  <div class="center glitch" style="margin-top: 25px; animation-delay: 2s; " data-text="Please allow location services in order to participate." id="subtext">Please allow location services in order to participate.</div>
+  <div id="sun"></div>
+  <div id="continue" style="visibility: hidden;" onclick="playVideo();">Continue</div>
+  <video width="70%" height="auto" id="video" style="visibility: hidden; margin-left: 15%; margin-top: 10%;" onended="videoEnded()">
+    <source src="red.mp4" type="video/mp4" />
+  </video>
+  <div id="scrollingText" style="visibility: hidden;">
+    Watch the edges of your hands. <br/><br/>
+    The light from the screen graces the form. <br/><br/>
+    Video is not a two-dimensional format <br/> <br/>
+    The screen is not flat <br/><br/>
+    The light extends into space <br/><br/>
+    and affects everything around <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+     Turn your computer 90 degrees <br/>
+     so that you can't directly see the screen <br/>
+
+  </div>
+  <script>
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var day = 86400000;
+      var sunset = new Date().sunset(position.coords.latitude, position.coords.longitude);
+      var sun = document.getElementById('sun');
+      console.log(sunset);
+      console.log(new Date(sunset))
+      var d = new Date();
+      console.log(d);
+      var curTime = d.getTime();
+      var timeTil = sunset - curTime;
+      var percentage = (day - (day/4) - timeTil)/day * 100;
+      if(timeTil < 0){
+        document.getElementById('text').innerHTML = "Please find a dark space. <br/> Turn off the lights and settle in.";
+        document.getElementById('continue').style.visibility = "visible";
+        document.getElementById('subtext').style.visibility = "hidden";
+      }else{
+        document.getElementById("sun").animate([
+          // keyframes
+          { top: '-100px', background: 'red' },
+          { top:  percentage + "%", background: '#ffcc00'}
+        ], {
+          // timing options
+          duration: 1000,
+          iterations: 1
+        });
+        sun.style.top = percentage + "%";
+        sun.style.background = '#ffcc00';
+      }
+    });
+
+    function playVideo(){
+        document.getElementById('text').style.visibility = "hidden";
+        document.getElementById('continue').style.visibility = "hidden";
+        document.getElementById('video').style.visibility = "visible";
+        document.getElementById('video').play();
+        document.getElementById('scrollingText').style.visibility = "visible";
+        document.getElementById('scrollingText').animate([
+          // keyframes
+          { top: '150%'},
+          { top: '-350px'}
+        ], {
+          // timing options
+          duration: 40000,
+          iterations: 1
+        });
+        document.getElementById('scrollingText').style.top = '-350px';
+    }
+
+    function videoEnded(){
+      document.getElementById('video').style.visibility = "hidden";
+    }
+  </script>
+</body>
+</html>

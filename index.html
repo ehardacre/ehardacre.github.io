@@ -9,17 +9,25 @@
 <script>var __adobewebfontsappname__="dreamweaver"</script>
 <script src="https://use.edgefonts.net/maven-pro:n4:default.js" type="text/javascript"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
-<body>
+<body onLoad="selectType('featured')">
 	<h1 class="title">Ethan Hardacre</h1>
-	<h3 class="title" style="margin-top: -15px;">Designer</h3>
-	
+	<div style="width: 50%; margin-left: 25%; margin-top: -15px; height: 50px">
+	<div style="width:25%; float: right;"> <h3 id = "designer" class="title type" onclick="selectType('designer')">Designer</h3> </div>
+	<div style="width:25%; float: right;"> <h3 id = "programmer" class="title type" onclick="selectType('programmer')">Programmer</h3> </div>
+	<div style="width:25%; float: right;"> <h3 id = "artist" class="title type" onclick="selectType('artist')">Artist</h3> </div>
+	<div style="width:25%; float: right;"> <h3 id = "featured" class="title type selType" onclick="selectType('featured')">Featured</h3> </div>
+	</div>
+
+
 	<a href="images/portfolio.pdf" class="fa fa-file-pdf-o" style="position: fixed; margin-top: -5%; margin-left: 5%" download>
 	<span class="tooltiptext">pdf download</span>
 	</a>
-	
+
+	<a href="livescreen/livescreen.html" class="fa fa-tv" style="position: fixed; margin-top: 5%; margin-left: 5%">
+	<span class="tooltiptext">livescreen video</span>
+	</a>
 
 	<div class="divider"></div>
 <h3 class="title">Other Digital Spaces</h3>
@@ -29,98 +37,189 @@
 	<a href="https://www.behance.net/ethanhardacre" class="fa fa-behance"></a>
 	<a href="ArtistPage/index.html" class="fa fa-desktop"></a>
 	</div>
-	
+
 <div class="divider"></div>
 <h3 class="title">Projects</h3>
-	
-	
-<div class="container" onClick="window.location.href='projects/WIP/index.html'">
+
+
+<div class="container artist featured" onClick="window.location.href='projects/SK8/index.html'" style="display: none;">
+	<img src="images/sk8_thumbnail.png" alt="" class="thumbnail"/>
+	<div class="overlay" style="background-color: rgba(6,0,95,0.87)">
+		<h1 class="title" style="color:white">Skatin' Away</h1>
+		<h3 class="title" style="color:white; margin-top: -15px;">Web + Video</h3>
+	</div>
+	</div>
+
+
+<div class="container designer" onClick="window.location.href='projects/WIP/index.html'" style="display: none;">
 	<img src="images/wip_thumbnail.png" alt="" class="thumbnail"/>
 	<div class="overlay" style="background-color: rgba(26,203,255,.8)">
 		<h1 class="title" style="color:white">Works in Progress</h1>
 		<h3 class="title" style="color:white; margin-top: -15px;">Identity</h3>
 	</div>
 	</div>
-	
-	
-<div class="container" onClick="window.location.href='projects/WHE/index.html'">
+
+
+<div class="container designer featured" onClick="window.location.href='projects/WHE/index.html'">
 	<img src="images/whe_thumbnail.png" alt="" class="thumbnail"/>
 	<div class="overlay" style="background-color: rgba(14,25,72,.75)">
 		<h1 class="title" style="color:white">Women's Health Elevated</h1>
 		<h3 class="title" style="color:white; margin-top: -15px;">Web UX + Identity</h3>
 	</div>
 	</div>
-	
-	
-<div class="container" onClick="window.location.href='projects/SAM/index.html'">
+
+
+<div class="container designer featured" onClick="window.location.href='projects/SAM/index.html'">
 	<img src="images/sam_thumbnail.png" alt="" class="thumbnail"/>
 	<div class="overlay" style="background-color: rgba(219,205,177,0.80)">
 		<h1 class="title" style="color:rgba(198,34,77,1.00)">Sam Betanzos Concert</h1>
 		<h3 class="title" style="color:rgba(198,34,77,1.00); margin-top: -15px;">Poster</h3>
 	</div>
 	</div>
-	
-<div class="container" onClick="window.location.href='projects/EYE/index.html'">
+
+<div class="container artist featured" onClick="window.location.href='projects/FIB/index.html'">
+	<img src="images/fib_thumbnail.png" alt="" class="thumbnail"/>
+	<div class="overlay" style="background-color: rgba(128,85,135,0.78)">
+		<h1 class="title" style="color:white">Fiber Studio</h1>
+		<h3 class="title" style="color:white; margin-top: -15px;">Exploration in Fibers</h3>
+	</div>
+	</div>
+
+<div class="container designer featured" onClick="window.location.href='projects/EYE/index.html'">
 	<img src="images/eye_thumbnail.png" alt="" class="thumbnail"/>
-	<div class="overlay" style="background-color: rgba(56,0,66,0.70)">
-		<h1 class="title" style="color:white">Eye-Write</h1>
-		<h3 class="title" style="color:white; margin-top: -15px;">Human Computer Interaction Study</h3>
+	<div class="overlay" style="background-color: rgba(255,249,224,0.80)">
+		<h1 class="title" style="color:black">Eye-Write</h1>
+		<h3 class="title" style="color:black; margin-top: -15px;">Human Computer Interaction Study</h3>
 	</div>
 	</div>
-	
-<div class="container" onClick="window.location.href='projects/5CL/index.html'">
+
+<div class="container programmer featured" onClick="window.location.href='projects/CCS/index.html'">
+	<img src="images/ccs_thumbnail.png" alt="" class="thumbnail"/>
+	<div class="overlay" style="background-color: rgba(0,0,0,0.6)">
+		<h1 class="title" style="color:white">CecilSafe</h1>
+		<h3 class="title" style="color:white; margin-top: -15px;">Web App</h3>
+	</div>
+	</div>
+
+<div class="container designer" onClick="window.location.href='projects/5CL/index.html'" style="display: none;">
 	<img src="images/5CL_thumbnail.png" alt="" class="thumbnail"/>
 	<div class="overlay" style="background-color: rgba(255,0,0,0.70)">
 		<h1 class="title" style="color:white">5C Laundry</h1>
 		<h3 class="title" style="color:white; margin-top: -15px;">UI/UX</h3>
 	</div>
 	</div>
-	
-<div class="container" onClick="window.location.href='projects/DEO/index.html'">
+
+<div class="container designer" onClick="window.location.href='projects/DEO/index.html'" style="display: none;">
 	<img src="images/deo_thumbnail.png" alt="" class="thumbnail"/>
 	<div class="overlay" style="background-color: rgba(0,51,205,0.90)">
 		<h1 class="title" style="color:white">Discover Earth's Oceans</h1>
 		<h3 class="title" style="color:white; margin-top: -15px;">Landing Page UI</h3>
 	</div>
 	</div>
-	
-<!--
-<div class="container" onClick="window.location.href='projects/DEO/index.html'">
-	<img src="images/coc_thumbnail.png" alt="" class="thumbnail"/>
-	<div class="overlay" style="background-color: rgba(0,51,205,0.90)">
-		<h1 class="title" style="color:white">Discover Earth's Oceans</h1>
-		<h3 class="title" style="color:white; margin-top: -15px;">Landing Page UI</h3>
-	</div>
-	</div>
--->
-	
-<!--
-<div class="container" onClick="window.location.href=''">
-	<img src="images/ltb_thumbnail.png" alt="" class="thumbnail"/>
-	<div class="overlay" style="background-color: rgba(255,162,0,0.70)">
-		<h1 class="title" style="color:white">Bouldering Lake Tahoe</h1>
-		<h3 class="title" style="color:white; margin-top: -15px;">User Interface</h3>
-	</div>
-	</div>
--->
-	
-<!--
-<div class="container" onClick="window.location.href='projects/ILL/index.html'">
-	<img src="images/ill_thumbnail.png" alt="" class="thumbnail"/>
-	<div class="overlay" style="background-color: rgba(213,213,213,0.77)">
-		<h1 class="title" style="color:rgba(76,0,204,1.00)">Illustrations</h1>
-		<h3 class="title" style="color:rgba(76,0,204,1.00); margin-top: -15px;">Portfolio</h3>
-	</div>
-	</div>
--->
-	
-<div class="container" onClick="window.location.href='projects/CLG/index.html'">
+
+
+<div class="container designer featured" onClick="window.location.href='projects/CLG/index.html'">
 	<img src="images/clg_thumbnail.png" alt="" class="thumbnail"/>
 	<div class="overlay" style="background-color: rgba(17,17,17,.80)">
 		<h1 class="title" style="color:white">The Cost of Liquid Gold</h1>
 		<h3 class="title" style="color:white; margin-top: -15px;">Self Publication</h3>
 	</div>
 	</div>
+
+<div class="container programmer featured" onClick="window.location.href='projects/BLK/index.html'">
+	<img src="images/blk_thumbnail.png" alt="" class="thumbnail"/>
+	<div class="overlay" style="background-color: rgba(0,0,0,0.6)">
+		<h1 class="title" style="color:white">Block Party</h1>
+		<h3 class="title" style="color:white; margin-top: -15px;">5C Hackathon 2nd Place</h3>
+	</div>
+	</div>
+
+<div class="container programmer" onClick="window.location.href='projects/BTS/index.html'" style="display: none;">
+	<img src="images/bts_thumbnail.png" alt="" class="thumbnail"/>
+	<div class="overlay" style="background-color: rgba(0,0,0,0.6)">
+		<h1 class="title" style="color:white">Boris - SPSS</h1>
+		<h3 class="title" style="color:white; margin-top: -15px;">Python Script</h3>
+	</div>
+	</div>
+
+<div class="container programmer" onClick="window.location.href='projects/OVE/index.html'" style="display: none;">
+	<img src="images/ove_thumbnail.png" alt="" class="thumbnail"/>
+	<div class="overlay" style="background-color: rgba(0,0,0,0.6)">
+		<h1 class="title" style="color:white">Overlap Resurection</h1>
+		<h3 class="title" style="color:white; margin-top: -15px;">Matlab</h3>
+	</div>
+	</div>
+
+<div class="container programmer" onClick="window.location.href='projects/CEN/index.html'" style="display: none;">
+	<img src="images/cen_thumbnail.png" alt="" class="thumbnail"/>
+	<div class="overlay" style="background-color: rgba(0,0,0,0.6)">
+		<h1 class="title" style="color:white">Census Map</h1>
+		<h3 class="title" style="color:white; margin-top: -15px;">Java</h3>
+	</div>
+	</div>
+
+<div class="container programmer" onClick="window.location.href='projects/AUT/index.html'" style="display: none;">
+	<img src="images/aut_thumbnail.png" alt="" class="thumbnail"/>
+	<div class="overlay" style="background-color: rgba(0,0,0,0.6)">
+		<h1 class="title" style="color:white">Auto-Complete</h1>
+		<h3 class="title" style="color:white; margin-top: -15px;">Java</h3>
+	</div>
+	</div>
+
+<div class="container artist" onClick="window.location.href='projects/CLO/index.html'" style="display: none;">
+	<img src="images/clo_thumbnail.png" alt="" class="thumbnail"/>
+	<div class="overlay" style="background-color: rgba(124,162,189,0.66)">
+		<h1 class="title" style="color:white">Cloudy Day</h1>
+		<h3 class="title" style="color:white; margin-top: -15px;">Paper Sculpture</h3>
+	</div>
+	</div>
+
+<div class="container artist featured" onClick="window.location.href='projects/100/index.html'">
+	<img src="images/100_thumbnail.png" alt="" class="thumbnail"/>
+	<div class="overlay" style="background-color: rgba(255,255,255,0.61); border: 1px solid black;">
+		<h1 class="title" style="color:black">100s of things</h1>
+		<h3 class="title" style="color:black; margin-top: -15px;">Digital Series</h3>
+	</div>
+	</div>
+
+<div class="container artist" onClick="window.location.href='projects/PHO/index.html'" style="display: none;">
+	<img src="images/pho_thumbnail.png" alt="" class="thumbnail"/>
+	<div class="overlay" style="background-color: rgba(206,42,34,0.81)">
+		<h1 class="title" style="color:white">Photo Gallery</h1>
+		<h3 class="title" style="color:white; margin-top: -15px;">Film and Digital Photography</h3>
+	</div>
+	</div>
+
+<script>
+	function selectType(s){
+		var all = document.getElementsByClassName('type');
+		for (i = 0; i < all.length; i++){
+			e = all[i];
+			if (e.classList.contains('selType')){
+				if (e.id != s){
+					e.classList.remove('selType');
+				}
+			}else{
+				if (e.id == s){
+					e.classList.add('selType');
+					var thumbnails = document.getElementsByClassName('container');
+					for (j = 0; j < thumbnails.length; j++){
+						d = thumbnails[j];
+						console.log(d);
+						console.log(s);
+						console.log("___");
+						if (d.classList.contains(s)){
+							console.log("is class");
+							d.style.display = "block";
+						}else{
+							d.style.display = "none";
+						}
+					}
+				}
+			}
+		}
+	}
+	</script>
 
 </body>
 

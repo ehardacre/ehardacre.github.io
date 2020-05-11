@@ -126,3 +126,12 @@ body,html{
 .fa:hover .tooltiptext {
   visibility: visible;
 }
+
+.type{
+	color: #aaa;
+	cursor: pointer;
+}
+
+.selType{
+	color: #000;
+}
